@@ -532,7 +532,7 @@ body {
 
 	overflow: visible;
 	z-index: 1;
-	text-align: center;
+	/*text-align: center;*/
 
 	-webkit-transition: -webkit-perspective .4s ease;
 	   -moz-transition: -moz-perspective .4s ease;
