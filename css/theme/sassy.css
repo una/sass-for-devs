@@ -9,15 +9,21 @@ cite {
   font-size: 60%;
   display: block;
   float: right;
-  color: grey;
+  color: #6b717f;
   font-style: italic; }
 
+h1 {
+  font-weight: 800; }
+
+.reveal .slides {
+  text-align: left; }
+
 /*********************************************
- * GLOBAL STYLES
- *********************************************/
+
 body {
   background: white;
   background-color: white; }
+
 
 .reveal {
   font-family: Source Sans Pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -31,9 +37,7 @@ body {
   background: rgba(0, 0, 0, 0.99);
   text-shadow: none; }
 
-/*********************************************
- * HEADERS
- *********************************************/
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -51,11 +55,9 @@ body {
 .reveal h1 {
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
 
-/*********************************************
- * LINKS
- *********************************************/
+
 .reveal a:not(.image) {
-  color: #669999;
+  color: $patina;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -64,7 +66,7 @@ body {
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #d2e1dd;
+  color: $nebula;
   text-shadow: none;
   border: none; }
 
@@ -72,9 +74,7 @@ body {
   color: #fff;
   background: #476b6b; }
 
-/*********************************************
- * IMAGES
- *********************************************/
+
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
@@ -88,59 +88,53 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #669999;
+  border-color: $patina;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
-/*********************************************
- * NAVIGATION CONTROLS
- *********************************************/
+
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
-  border-right-color: #669999; }
+  border-right-color: $patina; }
 
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
-  border-left-color: #669999; }
+  border-left-color: $patina; }
 
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
-  border-bottom-color: #669999; }
+  border-bottom-color: $patina; }
 
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
-  border-top-color: #669999; }
+  border-top-color: $patina; }
 
 .reveal .controls div.navigate-left.enabled:hover {
-  border-right-color: #d2e1dd; }
+  border-right-color: $nebula; }
 
 .reveal .controls div.navigate-right.enabled:hover {
-  border-left-color: #d2e1dd; }
+  border-left-color: $nebula; }
 
 .reveal .controls div.navigate-up.enabled:hover {
-  border-bottom-color: #d2e1dd; }
+  border-bottom-color: $nebula; }
 
 .reveal .controls div.navigate-down.enabled:hover {
-  border-top-color: #d2e1dd; }
+  border-top-color: $nebula; }
 
-/*********************************************
- * PROGRESS BAR
- *********************************************/
+
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #669999;
+  background: $patina;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
-/*********************************************
- * SLIDE NUMBER
- *********************************************/
+
 .reveal .slide-number {
-  color: #669999; }
+  color: $patina; }
 
 .reveal h1,
 .reveal h2 {
@@ -159,25 +153,26 @@ body {
 
 .fs-overview li {
   list-style: none; }
-
 .fs-overview span {
   font-weight: 900;
-  color: #669999;
+  color: $patina;
   display: inline-block;
   width: 9.5em; }
 
+*********************************************/
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  background-color: #2b2b2b; }
+  background: white;
+  background-color: white; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: Source Sans Pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 36px;
   font-weight: normal;
   letter-spacing: -0.02em;
-  color: #eee; }
+  color: #036; }
 
 ::selection {
   color: #fff;
@@ -194,12 +189,12 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #eee;
-  font-family: "League Gothic", Impact, sans-serif;
+  color: #c69;
+  font-family: Source Sans Pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 0.9em;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+  text-shadow: none; }
 
 .reveal h1 {
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
@@ -208,7 +203,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a:not(.image) {
-  color: #13DAEC;
+  color: #699;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -217,13 +212,13 @@ body {
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #71e9f4;
+  color: #a3c2c2;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #0d99a5; }
+  background: #476b6b; }
 
 /*********************************************
  * IMAGES
@@ -231,7 +226,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #eee;
+  border: 4px solid #036;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
@@ -241,7 +236,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #13DAEC;
+  border-color: #699;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -249,31 +244,31 @@ body {
  *********************************************/
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
-  border-right-color: #13DAEC; }
+  border-right-color: #699; }
 
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
-  border-left-color: #13DAEC; }
+  border-left-color: #699; }
 
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
-  border-bottom-color: #13DAEC; }
+  border-bottom-color: #699; }
 
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
-  border-top-color: #13DAEC; }
+  border-top-color: #699; }
 
 .reveal .controls div.navigate-left.enabled:hover {
-  border-right-color: #71e9f4; }
+  border-right-color: #a3c2c2; }
 
 .reveal .controls div.navigate-right.enabled:hover {
-  border-left-color: #71e9f4; }
+  border-left-color: #a3c2c2; }
 
 .reveal .controls div.navigate-up.enabled:hover {
-  border-bottom-color: #71e9f4; }
+  border-bottom-color: #a3c2c2; }
 
 .reveal .controls div.navigate-down.enabled:hover {
-  border-top-color: #71e9f4; }
+  border-top-color: #a3c2c2; }
 
 /*********************************************
  * PROGRESS BAR
@@ -282,7 +277,7 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #13DAEC;
+  background: #699;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -293,6 +288,6 @@ body {
  * SLIDE NUMBER
  *********************************************/
 .reveal .slide-number {
-  color: #13DAEC; }
+  color: #699; }
 
 /*# sourceMappingURL=sassy.css.map */

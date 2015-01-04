@@ -3,10 +3,31 @@
 @import "../template/settings";
 // ---------------------------------------------
 
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900);
+
+// Sassy colors
+$hopbush: #c69;
+$midnight-blue: #036;
+$white: white;
+$iron: #dadbdf;
+$pale-sky: #6b717f;
+$patina: #699;
+$nebula: #d2e1dd;
+
+// Override theme settings (see ../template/settings.scss)
+
+$backgroundColor: $white;
+$linkColor: $patina;
+$mainFont: Source Sans Pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$mainColor: $midnight-blue;
+$headingFont: $mainFont;
+$headingColor: $hopbush;
+$linkColorHover: lighten( $linkColor, 20% );
+$headingTextShadow: none;
 
 mark {
-  background-color: #6b717f;
-  color: #dadbdf;
+  background-color: $pale-sky;
+  color: $iron;
   padding: .05em .3em !important; /*overriding default*/
 }
 
@@ -14,26 +35,24 @@ cite {
   font-size: 60%;
   display: block;
   float: right;
-  color: grey;
+  color: $pale-sky;
   font-style: italic;
 }
 
-// Sassy colors
-$hopbush: #c69;
-$navy: #0d223e;
-$white: white;
+h1 {
+  font-weight: 800;
+}
 
-// Override theme settings (see ../template/settings.scss)
-
+.reveal .slides {
+  text-align: left;
+}
 
 /*********************************************
- * GLOBAL STYLES
- *********************************************/
+
 body {
   background: white;
   background-color: white; }
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900);
 
 .reveal {
   font-family: Source Sans Pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -47,9 +66,7 @@ body {
   background: rgba(0, 0, 0, 0.99);
   text-shadow: none; }
 
-/*********************************************
- * HEADERS
- *********************************************/
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -67,11 +84,9 @@ body {
 .reveal h1 {
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
 
-/*********************************************
- * LINKS
- *********************************************/
+
 .reveal a:not(.image) {
-  color: #669999;
+  color: $patina;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -80,7 +95,7 @@ body {
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #d2e1dd;
+  color: $nebula;
   text-shadow: none;
   border: none; }
 
@@ -88,9 +103,7 @@ body {
   color: #fff;
   background: #476b6b; }
 
-/*********************************************
- * IMAGES
- *********************************************/
+
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
@@ -104,59 +117,53 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #669999;
+  border-color: $patina;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
-/*********************************************
- * NAVIGATION CONTROLS
- *********************************************/
+
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
-  border-right-color: #669999; }
+  border-right-color: $patina; }
 
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
-  border-left-color: #669999; }
+  border-left-color: $patina; }
 
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
-  border-bottom-color: #669999; }
+  border-bottom-color: $patina; }
 
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
-  border-top-color: #669999; }
+  border-top-color: $patina; }
 
 .reveal .controls div.navigate-left.enabled:hover {
-  border-right-color: #d2e1dd; }
+  border-right-color: $nebula; }
 
 .reveal .controls div.navigate-right.enabled:hover {
-  border-left-color: #d2e1dd; }
+  border-left-color: $nebula; }
 
 .reveal .controls div.navigate-up.enabled:hover {
-  border-bottom-color: #d2e1dd; }
+  border-bottom-color: $nebula; }
 
 .reveal .controls div.navigate-down.enabled:hover {
-  border-top-color: #d2e1dd; }
+  border-top-color: $nebula; }
 
-/*********************************************
- * PROGRESS BAR
- *********************************************/
+
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #669999;
+  background: $patina;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
-/*********************************************
- * SLIDE NUMBER
- *********************************************/
+
 .reveal .slide-number {
-  color: #669999; }
+  color: $patina; }
 
 .reveal h1,
 .reveal h2 {
@@ -177,10 +184,14 @@ body {
   list-style: none; }
 .fs-overview span {
   font-weight: 900;
-  color: #669999;
+  color: $patina;
   display: inline-block;
   width: 9.5em; }
+
+*********************************************/
 
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
+
+
