@@ -1,3 +1,3 @@
-# Spreading the Sass Love
+# Sass for Developers
 
-A lightning talk about building community for SassConf 2014.
+Slides for a talk on learning Sass from a development perspective for All Girl Hack Night, Jan 14, 2015
