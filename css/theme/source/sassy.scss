@@ -23,8 +23,21 @@ $mainColor: $midnight-blue;
 $headingFont: $mainFont;
 $headingColor: $hopbush;
 $linkColorHover: lighten( $linkColor, 20% );
+$headingTextShadow: none;
 $heading1TextShadow: none;
 $selectionBackgroundColor: $hopbush;
+$headingTextTransform: none;
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
 
 mark {
   background-color: $pale-sky;
@@ -40,10 +53,27 @@ cite {
   font-style: italic !important;
 }
 
+.abs-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
 .reveal {
   h1 {
     font-weight: 800;
+    margin-bottom: 1.4 !important;
     text-transform: initial !important; /*overriding default*/
+  }
+
+  h2 {
+    font-size: 1.3em;
+
+    &.syntax-label {
+      font-size: .8em;
+      margin: 1em 0 -.5em 0;
+      line-height: 0;
+    }
   }
 
   section img {
@@ -54,10 +84,56 @@ cite {
   .slides {
     text-align: left;
   }
+
+  .bottom-links {
+    top: 100%;
+    position: absolute;
+    right: 0;
+    display: block;
+
+    h2 {
+      font-size: 50%;
+      margin: 0 !important;
+      text-shadow: none;
+    }
+
+    li {
+      list-style: none;
+      font-size: 50%;
+    }
+  }
+
+  pre {
+    box-shadow: none;
+    width: 100%;
+    border-radius: 3px;
+    font-family: inherit;
+
+    code {
+      padding: 1em;
+      margin: 0;
+    }
+  }
 }
 
-.center {
+.text-center {
   text-align: center;
+}
+
+.left {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  padding: 0 .5em !important;
+  @include clearfix;
+}
+
+.right {
+  box-sizing: border-box;
+  float: right;
+  width: 50%;
+  padding: 0 .5em !important;
+  @include clearfix;
 }
 
 // Theme template ------------------------------

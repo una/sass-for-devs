@@ -41,32 +41,41 @@
 		<div class="reveal">
 			<div class="slides">
 			<!-- About Me -->
-				<section>
+				<section class="abs-center">
 					<h1>Sass for Developers</h1>
 					<p>
 						<small><a href="http://unakravets.com">Una Kravets</a> / <a href="http://twitter.com/una">@una</a></small>
 					</p>
 				</section>
 
+				<section class="text-center">
+					<div class="abs-center">
+						<img src="img/ibm_watson.jpg" alt="IBM Watson Logo">
+					</div>
+				</section>
+
 				<section>
-					<img class="fragment" style="max-width: 45%; margin: 0 5% 50px 0;" src="img/sassydc-logo.svg" alt="">
+					<img style="max-width: 45%; margin: 0 5% 50px 0;" src="img/sassydc-logo.svg" alt="">
 					<img class="fragment" style="max-width: 45%" src="img/atxsass-logo.png" alt="">
 				</section>
 
 				<!-- What is Sass -->
 				<section>
-					<section>
+					<section class="text-center abs-center">
 						<h1>Sass...!?</h1>
-						<p>Sass is a CSS preprocessor.</p>
+						<p class="fragment">Sass is a CSS preprocessor.</p>
+						<img src="img/dude-thumbsup.gif" height="281" width="500" alt="thumbsup" class="fragment">
 					</section>
 
 					<section>
-						<h1>Sass:</h1>
-						<p><mark><q>Syntactically Awesome Style Sheets:</mark> Sass is the most mature, stable, and powerful professional grade CSS extension language in the world. </q><cite><a href="http://sass-lang.com">sass-lang.com</a></cite></p>
+						<div class="abs-center">
+							<h1>Sass:</h1>
+							<p><mark><q>Syntactically Awesome Style Sheets:</mark> Sass is the most mature, stable, and powerful professional grade CSS extension language in the world. </q><cite><a href="http://sass-lang.com">sass-lang.com</a></cite></p>
+						</div>
 					</section>
 
-					<section class="center">
-						<h1 class="fragment">Yes, You Can Program in CSS!</h1>
+					<section class="text-center abs-center">
+						<h1>Yes, You Can Program in CSS!</h1>
 						<p class="fragment">But first, let's talk about basics.</p>
 					</section>
 				</section>
@@ -79,30 +88,91 @@
 
 					<section>
 						<h1>Syntax</h1>
+						<hr>
+						<div class="left">
+						<h2 class="syntax-label">.sass</h2>
+						<pre>
+							<code>#sidebar
+  width: 30%
+  background-color: #faa</code>
+						</pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.scss</h2>
+						<pre>
+													<code>#sidebar {
+  width: 30%;
+  background-color: #faa;
+}</code>
+												</pre>
+						</div>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better">scss vs. sass</a></li>
+						</ul>
 					</section>
 
 					<section>
 						<h1>Variables</h1>
+						<hr>
+						<div class="left">
+						<h2 class="syntax-label">.scss</h2>
+						<pre>
+							<code>$font--sans: 'Open Sans', sans-serif;
+$pink: #c69;
+
+body {
+  font-family: $font--sans;
+}
+
+h1 {
+  color: $pink;
+}</code>
+						</pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+						<code>body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  color: #c69;
+}</code>
+												</pre>
+						</div>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better">scss vs. sass</a></li>
+						</ul>
 					</section>
 
 					<section>
 						<h1>Nesting</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>Partials</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>Imports</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>@extend (Selector Inheritance)</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>Mixins</h1>
+						<hr>
 					</section>
 				</section>
 
@@ -110,30 +180,37 @@
 				<section>
 					<section>
 						<h1>Control Directives</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>Lists</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>Maps</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>@each loop</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>@for loops</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>@if statements</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>@while loop</h1>
+						<hr>
 					</section>
 				</section>
 
@@ -141,18 +218,22 @@
 				<section>
 					<section>
 						<h1>Lets do Some Math</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>supported operators</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>color functions</h1>
+						<hr>
 					</section>
 
 					<section>
 						<h1>sin & cos</h1>
+						<hr>
 					</section>
 				</section>
 
@@ -160,6 +241,7 @@
 				<section>
 					<section>
 						<h1>Pulling it Together: Practical Application</h1>
+						<hr>
 					</section>
 					<section>
 						<h1> Mixins that Use loops</h1>
@@ -192,6 +274,17 @@
 					</section>
 				</section>
 
+				<section>
+					<h1>Thank You</h1>
+				</section>
+
+				<section>
+					<h1>Resources</h1>
+					<ul class="resource-list">
+						<li><a href="http://torquemag.io/developers-guide-learning-sass-twenty-minutes-less/">Developers Guide to Sass</a></li>
+					</ul>
+				</section>
+
 
 			<!-- END OF SLIDES -->
 			</div>
@@ -209,7 +302,7 @@
 				controls: true,
 				progress: true,
 				history: true,
-				center: true,
+				center: false,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
