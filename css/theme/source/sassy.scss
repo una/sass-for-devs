@@ -28,14 +28,15 @@ $heading1TextShadow: none;
 $selectionBackgroundColor: $hopbush;
 $headingTextTransform: none;
 
-@mixin clearfix() {
+%clearfix {
+  clear: both;
     &:before,
     &:after {
-        content: "";
-        display: table;
+        content: "" !important;
+        display: table !important;
     }
     &:after {
-        clear: both;
+        clear: both !important;
     }
 }
 
@@ -68,12 +69,19 @@ cite {
 
   h2 {
     font-size: 1.3em;
+    font-weight: 800;
+    clear: both;
 
     &.syntax-label {
+      font-weight: 500;
       font-size: .8em;
       margin: 1em 0 -.5em 0;
       line-height: 0;
     }
+  }
+
+  li {
+    margin-left: 1em;
   }
 
   section img {
@@ -88,18 +96,18 @@ cite {
   .bottom-links {
     top: 100%;
     position: absolute;
-    right: 0;
+    left: 0;
     display: block;
 
     h2 {
-      font-size: 50%;
+      font-size: .5em;
       margin: 0 !important;
       text-shadow: none;
     }
 
     li {
-      list-style: none;
-      font-size: 50%;
+      font-size: .5em;
+      line-height: 1.4;
     }
   }
 
@@ -125,7 +133,6 @@ cite {
   float: left;
   width: 50%;
   padding: 0 .5em !important;
-  @include clearfix;
 }
 
 .right {
@@ -133,8 +140,9 @@ cite {
   float: right;
   width: 50%;
   padding: 0 .5em !important;
-  @include clearfix;
 }
+
+
 
 // Theme template ------------------------------
 @import "../template/theme";

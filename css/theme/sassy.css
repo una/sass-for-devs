@@ -26,11 +26,16 @@ cite {
   text-transform: initial !important;
   /*overriding default*/ }
 .reveal h2 {
-  font-size: 1.3em; }
+  font-size: 1.3em;
+  font-weight: 800;
+  clear: both; }
   .reveal h2.syntax-label {
+    font-weight: 500;
     font-size: .8em;
     margin: 1em 0 -.5em 0;
     line-height: 0; }
+.reveal li {
+  margin-left: 1em; }
 .reveal section img {
   box-shadow: none !important;
   /*overriding default*/
@@ -41,15 +46,15 @@ cite {
 .reveal .bottom-links {
   top: 100%;
   position: absolute;
-  right: 0;
+  left: 0;
   display: block; }
   .reveal .bottom-links h2 {
-    font-size: 50%;
+    font-size: .5em;
     margin: 0 !important;
     text-shadow: none; }
   .reveal .bottom-links li {
-    list-style: none;
-    font-size: 50%; }
+    font-size: .5em;
+    line-height: 1.4; }
 .reveal pre {
   box-shadow: none;
   width: 100%;
@@ -67,22 +72,12 @@ cite {
   float: left;
   width: 50%;
   padding: 0 .5em !important; }
-  .left:before, .left:after {
-    content: "";
-    display: table; }
-  .left:after {
-    clear: both; }
 
 .right {
   box-sizing: border-box;
   float: right;
   width: 50%;
   padding: 0 .5em !important; }
-  .right:before, .right:after {
-    content: "";
-    display: table; }
-  .right:after {
-    clear: both; }
 
 /*********************************************
  * GLOBAL STYLES

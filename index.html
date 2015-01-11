@@ -87,12 +87,12 @@
 					</section>
 
 					<section>
-						<h1>Syntax</h1>
+						<h2>Syntax</h2>
 						<hr>
 						<div class="left">
 						<h2 class="syntax-label">.sass</h2>
 						<pre>
-							<code>#sidebar
+							<code class="scss">#sidebar
   width: 30%
   background-color: #faa</code>
 						</pre>
@@ -101,7 +101,7 @@
 						<div class="right">
 						<h2 class="syntax-label">.scss</h2>
 						<pre>
-													<code>#sidebar {
+							<code class="scss">#sidebar {
   width: 30%;
   background-color: #faa;
 }</code>
@@ -109,69 +109,174 @@
 						</div>
 						<ul class="bottom-links">
 						<h2>More Resources:</h2>
-							<li><a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better">scss vs. sass</a></li>
+							<li><a href="http://robots.thoughtbot.com/sass-variables">scss vs. sass</a></li>
 						</ul>
 					</section>
 
 					<section>
-						<h1>Variables</h1>
+						<h2>Variables</h2>
 						<hr>
 						<div class="left">
 						<h2 class="syntax-label">.scss</h2>
 						<pre>
-							<code>$font--sans: 'Open Sans', sans-serif;
+							<code class="scss">$open-sans-stack: 'Open Sans', Arial, Helvetica, sans-serif;
 $pink: #c69;
 
 body {
-  font-family: $font--sans;
+  font-family: $open-sans-stack;
 }
 
-h1 {
+h2 {
   color: $pink;
-}</code>
-						</pre>
+}</code></pre>
 						</div>
 
 						<div class="right">
 						<h2 class="syntax-label">.css output</h2>
 						<pre>
-						<code>body {
+						<code class="css">body {
   font-family: "Open Sans", sans-serif;
 }
 
-h1 {
+h2 {
   color: #c69;
-}</code>
-												</pre>
+}</code></pre>
 						</div>
 						<ul class="bottom-links">
 						<h2>More Resources:</h2>
-							<li><a href="http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better">scss vs. sass</a></li>
+							<li><a href="http://robots.thoughtbot.com/sass-variables">Thoughtbot on Sass Variables</a></li>
 						</ul>
 					</section>
 
 					<section>
-						<h1>Nesting</h1>
+						<h2>Variable Abstraction</h2>
+						<hr>
+						<div class="left">
+						<h2 class="syntax-label">.scss</h2>
+						<pre>
+							<code class="scss">//VARIABLES
+$open-sans-stack: 'Open Sans', Arial, Helvetica, sans-serif;
+$pink: #c69;
+
+// THEME
+$font--copy: $open-sans-stack;
+$header--color: $pink;
+
+body {
+  font-family: $open-sans-stack;
+}
+
+h2 {
+  color: $header--color;
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+						<code class="css">body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h2 {
+  color: #c69;
+}</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h2>Nesting</h2>
+						<hr>
+						<div class="left">
+						<h2 class="syntax-label">.scss</h2>
+						<pre>
+							<code class="scss">.sidebar {
+  float: left;
+
+  h2 {
+    font-size: 1.2em;
+  }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.sidebar {
+  float: left;
+}
+.sidebar h2 {
+  font-size: 1.2em;
+}</code></pre>
+						</div>
+
+						<h2 style="margin-top:7em" class="fragment">A word on Nesting</h2>
+						<ul>
+							<li class="fragment">Never go more than 3 levels deep</li>
+							<li class="fragment">Nesting with an <code>&</code> is a-okay</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Yay Nesting!</h2>
+						<hr>
+						<div class="left">
+						<h2 class="syntax-label">.scss</h2>
+						<pre>
+							<code class="scss">$blue: #00f;
+
+.blue-link {
+  color: $blue;
+
+  &:hover,
+  &:focus {
+    color: mix($blue, white, 50%);
+  }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.blue-link {
+  color: #00f;
+}
+.blue-link:hover, .blue-link:focus {
+  color: #7f7fff;
+}</code></pre>
+						</div>
+
+						<h2 style="margin-top:8em" class="fragment">The almighty ampersand</h2>
+						<ul>
+							<li class="fragment">Great for BEM, SMACSS & other syntax methodologies</li>
+							<li class="fragment">No long selectors!</li>
+						</ul>
+
+						<ul class="bottom-links fragment">
+						<h2>More Resources:</h2>
+							<li><a href="https://bem.info/method/">BEM documentation</a></li>
+							<li><a href="https://smacss.com/">SMACSS documentation</a></li>
+							<li><a href="http://takazudo.github.io/presentation-oocss-sass/#/">Slides on Object Oriented Sass</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Partials</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>Partials</h1>
+						<h2>Imports</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>Imports</h1>
+						<h2>@extend (Selector Inheritance)</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>@extend (Selector Inheritance)</h1>
-						<hr>
-					</section>
-
-					<section>
-						<h1>Mixins</h1>
+						<h2>Mixins</h2>
 						<hr>
 					</section>
 				</section>
@@ -179,37 +284,37 @@ h1 {
 				<!-- Control Directives -->
 				<section>
 					<section>
-						<h1>Control Directives</h1>
+						<h2>Control Directives</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>Lists</h1>
+						<h2>Lists</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>Maps</h1>
+						<h2>Maps</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>@each loop</h1>
+						<h2>@each loop</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>@for loops</h1>
+						<h2>@for loops</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>@if statements</h1>
+						<h2>@if statements</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>@while loop</h1>
+						<h2>@while loop</h2>
 						<hr>
 					</section>
 				</section>
@@ -217,22 +322,22 @@ h1 {
 				<!-- Sass Math -->
 				<section>
 					<section>
-						<h1>Lets do Some Math</h1>
+						<h2>Lets do Some Math</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>supported operators</h1>
+						<h2>supported operators</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>color functions</h1>
+						<h2>color functions</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h1>sin & cos</h1>
+						<h2>sin & cos</h2>
 						<hr>
 					</section>
 				</section>
@@ -240,23 +345,23 @@ h1 {
 				<!-- Pulling it Together -->
 				<section>
 					<section>
-						<h1>Pulling it Together: Practical Application</h1>
+						<h2>Pulling it Together: Practical Application</h2>
 						<hr>
 					</section>
 					<section>
-						<h1> Mixins that Use loops</h1>
+						<h2> Mixins that Use loops</h2>
 					</section>
 					<section>
-						<h1>Theming using Lists</h1>
+						<h2>Theming using Lists</h2>
 					</section>
 					<section>
-						<h1>Directory structure</h1>
+						<h2>Directory structure</h2>
 					</section>
 					<section>
-						<h1>Using JSON with Sass</h1>
+						<h2>Using JSON with Sass</h2>
 					</section>
 					<section>
-						<h1>A look behind Grids</h1>
+						<h2>A look behind Grids</h2>
 					</section>
 				</section>
 
