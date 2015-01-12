@@ -116,6 +116,7 @@
 					<section>
 						<h2>Variables</h2>
 						<hr>
+						<p>Placeholders for values used multiple times.</p>
 						<div class="left">
 						<h2 class="syntax-label">.scss</h2>
 						<pre>
@@ -151,6 +152,7 @@ h2 {
 					<section>
 						<h2>Variable Abstraction</h2>
 						<hr>
+						<p>Variables should be abstracted into themes.</p>
 						<div class="left">
 						<h2 class="syntax-label">.scss</h2>
 						<pre>
@@ -187,6 +189,7 @@ h2 {
 					<section>
 						<h2>Nesting</h2>
 						<hr>
+						<p>Nesting allows you to organize your code in relevant chunks</p>
 						<div class="left">
 						<h2 class="syntax-label">.scss</h2>
 						<pre>
@@ -215,6 +218,40 @@ h2 {
 							<li class="fragment">Never go more than 3 levels deep</li>
 							<li class="fragment">Nesting with an <code>&</code> is a-okay</li>
 						</ul>
+					</section>
+
+					<section>
+						<h2>When Nesting Goes Wrong</h2>
+						<hr>
+						<p>Do not do this.</p>
+						<div class="left">
+						<h2 class="syntax-label">.scss</h2>
+						<pre>
+							<code class="scss">body {
+  sidebar {
+    .news-section {
+      .description {
+        a {
+          color: #f00;
+        }
+      }
+    }
+  }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">body sidebar .news-section .description a {
+  color: #f00;
+}
+</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<img style = "width: 60%; margin: auto; display: block;" src="img/judge-opencomp.gif" alt="judge open comp">
 					</section>
 
 					<section>
@@ -261,18 +298,115 @@ h2 {
 					</section>
 
 					<section>
-						<h2>Partials</h2>
-						<hr>
-					</section>
-
-					<section>
-						<h2>Imports</h2>
-						<hr>
-					</section>
-
-					<section>
 						<h2>@extend (Selector Inheritance)</h2>
 						<hr>
+						<p>Extending will append the element to recieve the style block.</p>
+						<div class="left">
+							<h2 class="syntax-label">.scss</h2>
+							<pre>
+							<code class="scss">.kitten {
+  background-image: url("../img/kitten.jpg");
+}
+
+.kitten-with-hat {
+  @extend .kitten;
+
+  &:after {
+    content: " ";
+    background-image: url("../img/hat.jpg");
+  }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.kitten, .kitten-with-hat {
+  background-image: url("../img/kitten.jpg");
+}
+
+.kitten-with-hat:after {
+  content: " ";
+  background-image: url("../img/hat.jpg");
+}</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h2>Placeholder Selectors</h2>
+						<hr>
+						<p>Placeholders are "invisible" until extended</p>
+						</ul>
+						<div class="left">
+							<h2 class="syntax-label">.scss</h2>
+							<pre>
+							<code class="scss">$pink: #c69;
+$blue: #00f;
+
+// I'm not real yet
+%link {
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.pink-link {
+  @extend %link; //extending
+  color: $pink;
+}
+
+.blue-link {
+  @extend %link; //extending
+  color: #00f;
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.pink-link, .blue-link {
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.pink-link {
+  color: #c69;
+}
+
+.blue-link {
+  color: #00f;
+}</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h2>Partials & @import</h2>
+						<hr>
+						<p>Sass files are split into "partials" for better organization.</p>
+						<h2 class="syntax-label">main.scss (manifest file)</h2>
+						<pre>
+							<code>@import "vendors/bootstrap";
+@import "vendors/jquery-ui";
+
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/placeholders";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "layout/navigation";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/forms";
+						</code></pre>
+						<ul class="bottom-links fragment">
+						<h2>More Resources:</h2>
+							<li><a href="http://una.github.io/sass-director">Sass Director</a></li>
+							<li><a href="http://zurb.com/university/lessons/35">Wrangling Sass @import files</a></li>
+						</ul>
 					</section>
 
 					<section>
