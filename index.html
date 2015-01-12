@@ -305,7 +305,7 @@ h2 {
 							<h2 class="syntax-label">.scss</h2>
 							<pre>
 							<code class="scss">.kitten {
-  background-image: url("../img/kitten.jpg");
+  background-image: url("../img/kitten.png");
 }
 
 .kitten-with-hat {
@@ -313,7 +313,7 @@ h2 {
 
   &:after {
     content: " ";
-    background-image: url("../img/hat.jpg");
+    background-image: url("../img/hat.png");
   }
 }</code></pre>
 						</div>
@@ -322,13 +322,26 @@ h2 {
 						<h2 class="syntax-label">.css output</h2>
 						<pre>
 							<code class="css">.kitten, .kitten-with-hat {
-  background-image: url("../img/kitten.jpg");
+  background-image: url("../img/kitten.png");
 }
 
 .kitten-with-hat:after {
   content: " ";
-  background-image: url("../img/hat.jpg");
+  background-image: url("../img/hat.png");
 }</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<div class="left">
+							<h2 class="syntax-label">.kitten</h2>
+							<br>
+							<img src="img/cat.jpg" height="493" width="360" alt="">
+						</div>
+						<div class="right">
+						<h2 class="syntax-label">.kitten-with-hat</h2>
+						<br>
+							<img src="img/cat-with-hat.jpg" height="493" width="360" alt="">
 						</div>
 					</section>
 
@@ -475,9 +488,42 @@ $blue: #00f;
 					<section>
 						<h2>Maps</h2>
 						<hr>
+						<p>Maps are structured in <code>key: value</code> pairs and accessed with <code>map-get($map-name, key).</code></p>
+						<div class="left">
+							<h2 class="syntax-label">.scss</h2>
+							<pre>
+							<code class="scss">$breakpoints: (
+  small: 767px,
+  medium: 992px,
+  large: 1200px
+);
+
+.sidebar {
+  width: 30%;
+
+    @media (max-width: map-get($breakpoints, small)) {
+      width: 100%;
+    }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.sidebar {
+  width: 30%;
+}
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+</code></pre>
+						</div>
 						<ul class="bottom-links">
 						<h2>More Resources:</h2>
 							<li><a href="http://viget.com/extend/sass-maps-are-awesome">Sass Maps are Awesome!</a></li>
+							<li><a href="http://www.sitepoint.com/using-sass-maps/">Using Sass Maps</a></li>
 						</ul>
 					</section>
 
@@ -561,10 +607,6 @@ $blue: #00f;
   width: 75%;
 }</code></pre>
 						</div>
-						<ul class="bottom-links">
-						<h2>More Resources:</h2>
-							<li><a href="http://12devs.co.uk/articles/handy-advanced-sass/">Handy Advanced Sass</a></li>
-						</ul>
 					</section>
 
 					<section>
@@ -581,7 +623,7 @@ $blue: #00f;
 				<!-- Sass Math -->
 				<section>
 					<section>
-						<h2>Lets do Some Math</h2>
+						<h1>Lets do Some Math</h1>
 						<hr>
 					</section>
 
@@ -604,12 +646,26 @@ $blue: #00f;
 				<!-- Pulling it Together -->
 				<section>
 					<section>
-						<h2>Pulling it Together: Practical Application</h2>
+						<h1>Pulling it Together</h1>
 						<hr>
 					</section>
 
 					<section>
-						<h2> Mixins Can Take Values</h2>
+						<h2>Sassy Shapes Mixin</h2>
+						<p>Mixins can take values and run logic loops.</p>
+						<p data-height="450" data-theme-id="5255" data-slug-hash="BhCLi" data-default-tab="result" data-user="unax3" class='codepen'>See the Pen <a href='http://codepen.io/unax3/pen/BhCLi/'>Sassy Shape Machine Mixin</a> by Una Kravets (<a href='http://codepen.io/unax3'>@unax3</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+						<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+					</section>
+
+					<section>
+						<h2>Sassy Shapes Mixin</h2>
+						<p>Putting it to use.</p>
+						<p data-height="450" data-theme-id="5255" data-slug-hash="ujLCs" data-default-tab="result" data-user="unax3" class='codepen'>See the Pen <a href='http://codepen.io/unax3/pen/ujLCs/'>Sassy CSS Puppy</a> by Una Kravets (<a href='http://codepen.io/unax3'>@unax3</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+					</section>
+
+					<section>
+						<h2>Mixins and @content</h2>
 					</section>
 
 					<section>
@@ -617,8 +673,17 @@ $blue: #00f;
 					</section>
 
 					<section>
-						<h2>Theming using Lists</h2>
+						<h2>Theming using Maps</h2>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="https://bugsnag.com/blog/sass-color-palettes">Using Maps in Color Pallets</a></li>
+						</ul>
 					</section>
+
+					<section>
+
+					</section>
+
 					<section>
 						<h2>Directory structure</h2>
 					</section>

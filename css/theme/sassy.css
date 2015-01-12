@@ -34,6 +34,10 @@ cite {
     font-size: .8em;
     margin: 1em 0 -.5em 0;
     line-height: 0; }
+.reveal p code {
+  color: #c69;
+  font-size: 90%;
+  font-family: monospace; }
 .reveal li {
   margin-left: 1em; }
 .reveal section img {

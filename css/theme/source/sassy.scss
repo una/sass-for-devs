@@ -80,6 +80,12 @@ cite {
     }
   }
 
+  p code {
+    color: $headingColor;
+    font-size: 90%;
+    font-family: monospace;
+  }
+
   li {
     margin-left: 1em;
   }
