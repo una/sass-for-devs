@@ -336,7 +336,6 @@ h2 {
 						<h2>Placeholder Selectors</h2>
 						<hr>
 						<p>Placeholders are "invisible" until extended</p>
-						</ul>
 						<div class="left">
 							<h2 class="syntax-label">.scss</h2>
 							<pre>
@@ -382,9 +381,10 @@ $blue: #00f;
 						<h2>Partials & @import</h2>
 						<hr>
 						<p>Sass files are split into "partials" for better organization.</p>
-						<h2 class="syntax-label">main.scss (manifest file)</h2>
+						<div class="left">
+						<h2 class="syntax-label">Manifest File (main.scss)</h2>
 						<pre>
-							<code>@import "vendors/bootstrap";
+							<code class="scss">@import "vendors/bootstrap";
 @import "vendors/jquery-ui";
 
 @import "utils/variables";
@@ -401,8 +401,22 @@ $blue: #00f;
 @import "layout/footer";
 @import "layout/sidebar";
 @import "layout/forms";
-						</code></pre>
-						<ul class="bottom-links fragment">
+
+@import "components/buttons";
+@import "components/carousel";
+@import "components/cover";
+@import "components/dropdown";
+
+@import "pages/home";
+@import "pages/contact";
+
+@import "themes/theme";
+@import "themes/admin";</code></pre>
+</div>
+						<div class="right">
+							<img style = "width: 45%" src="img/sass-directories.jpg" alt="sass directories">
+						</div>
+						<ul class="bottom-links">
 						<h2>More Resources:</h2>
 							<li><a href="http://una.github.io/sass-director">Sass Director</a></li>
 							<li><a href="http://zurb.com/university/lessons/35">Wrangling Sass @import files</a></li>
@@ -410,16 +424,47 @@ $blue: #00f;
 					</section>
 
 					<section>
-						<h2>Mixins</h2>
+						<h2>Mixins & @include</h2>
 						<hr>
+						<p>Mixins are blocks of code you @include. We'll get fancier with them later.</p>
+												<div class="left">
+						<h2 class="syntax-label">.scss</h2>
+						<pre>
+							<code class="scss">@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nyan-cat {
+  width: 450px;
+  @include center-block;
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.nyan-cat {
+  width: 450px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}</code></pre>
+						</div>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://web-design-weekly.com/2013/05/12/handy-sass-mixins/">Handy Sass Mixins</a></li>
+						</ul>
 					</section>
 				</section>
 
 				<!-- Control Directives -->
 				<section>
 					<section>
-						<h2>Control Directives</h2>
+						<h1>Control Directives</h1>
 						<hr>
+						<p>Logic flow in Sass</p>
 					</section>
 
 					<section>
@@ -430,16 +475,96 @@ $blue: #00f;
 					<section>
 						<h2>Maps</h2>
 						<hr>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://viget.com/extend/sass-maps-are-awesome">Sass Maps are Awesome!</a></li>
+						</ul>
 					</section>
 
 					<section>
 						<h2>@each loop</h2>
 						<hr>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://thesassway.com/intermediate/if-for-each-while">A Post on Control Directives</a></li>
+						</ul>
 					</section>
 
 					<section>
 						<h2>@for loops</h2>
+						<p>For loop using <code>through</code></p>
 						<hr>
+							<div class="left">
+							<h2 class="syntax-label">.scss</h2>
+							<pre>
+							<code class="scss">$columns: 4;
+
+@for $i from 1 through $columns {
+  .cols-#{$i} {
+    width: ((100 / $columns) * $i) * 1%;
+  }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.cols-1 {
+  width: 25%;
+}
+
+.cols-2 {
+  width: 50%;
+}
+
+.cols-3 {
+  width: 75%;
+}
+
+.cols-4 {
+  width: 100%;
+}</code></pre>
+						</div>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://12devs.co.uk/articles/handy-advanced-sass/">Handy Advanced Sass</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>@for loops</h2>
+						<p>For loop using <code>to</code></p>
+						<hr>
+							<div class="left">
+							<h2 class="syntax-label">.scss</h2>
+							<pre>
+							<code class="scss">$columns: 4;
+
+@for $i from 1 to $columns {
+  .cols-#{$i} {
+    width: ((100 / $columns) * $i) * 1%;
+  }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.cols-1 {
+  width: 25%;
+}
+
+.cols-2 {
+  width: 50%;
+}
+
+.cols-3 {
+  width: 75%;
+}</code></pre>
+						</div>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://12devs.co.uk/articles/handy-advanced-sass/">Handy Advanced Sass</a></li>
+						</ul>
 					</section>
 
 					<section>
@@ -482,9 +607,15 @@ $blue: #00f;
 						<h2>Pulling it Together: Practical Application</h2>
 						<hr>
 					</section>
+
+					<section>
+						<h2> Mixins Can Take Values</h2>
+					</section>
+
 					<section>
 						<h2> Mixins that Use loops</h2>
 					</section>
+
 					<section>
 						<h2>Theming using Lists</h2>
 					</section>
