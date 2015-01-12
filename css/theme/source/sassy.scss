@@ -90,6 +90,19 @@ cite {
     margin-left: 1em;
   }
 
+  dl {
+    font-size: .6em;
+    line-height: 1.4;
+
+    dt {
+      color: $headingColor;
+    }
+
+    dd {
+      margin-bottom: 1em;
+    }
+  }
+
   section img {
     box-shadow: none !important; /*overriding default*/
     border: none !important; /*overriding default*/

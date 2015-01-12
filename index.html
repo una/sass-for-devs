@@ -83,7 +83,19 @@
 				<!-- Basics -->
 				<section>
 					<section>
-						<h1>A Brief Intro to Sass</h1>
+						<h1>A Quick Intro to Sass</h1>
+						<hr>
+						<ul>
+							<li>Syntax</li>
+							<li>Variables</li>
+							<li>Variable Abstraction</li>
+							<li>Nesting</li>
+							<li>Ampersands</li>
+							<li>Selector Inheritance & @extend</li>
+							<li>Placeholder Selectors</li>
+							<li>Partials & @import</li>
+							<li>Mixins & @include</li>
+						</ul>
 					</section>
 
 					<section>
@@ -477,12 +489,76 @@ $blue: #00f;
 					<section>
 						<h1>Control Directives</h1>
 						<hr>
-						<p>Logic flow in Sass</p>
+						<ul>
+							<li>Lists</li>
+							<li>List Functions</li>
+							<li>Maps</li>
+							<li>@each loop</li>
+							<li>@for loop</li>
+							<li>@while loop</li>
+						</ul>
 					</section>
 
 					<section>
 						<h2>Lists</h2>
 						<hr>
+							<pre><code class="scss">$social-icons: twitter, facebook, instagram, dribbble;</code></pre>
+							<h2 class="syntax-label">List Functions</h2><br>
+							<dl>
+								<div class="left">
+								<dt>length($list):</dt> <dd> returns the length of a $list (if not a list, returns 1).
+								<dt>nth($list, $index):</dt> <dd> returns the value at $index position in $list (throw an error if index out of list range).
+								<dt>index($list, $value):</dt> <dd> returns the first index of the searched for $value in $list (false if not found).
+								<dt>append($list, $value[, $separator]):</dt> <dd> appends $value to the end of $list using $separator as a separator (using the current one if not specified).
+								</div>
+								<div class="right">
+								<dt>join($list-1, $list-2[, $separator]):</dt> <dd> appends $list-2 to $list-1 using $separator as a separator (using the one from the first list if not specified).
+								<dt>zip(*$lists):</dt> <dd> combines several list into a comma-separated list where the nth value is a space-separated lists of all source lists nth values. In case source lists are not all the same length, the result list will be the length of the shortest one.
+								</div>
+							</dl>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/">Understanding Sass Lists</a></li>
+							<li><a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/">Advanced Sass List Functions</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Lists in Action</h2>
+ 						<p>Note: Sass Lists start at <code>1</code>, not <code>0</code>.</p>
+						<hr>
+							<div class="left">
+							<h2 class="syntax-label">.scss</h2>
+							<pre>
+							<code class="scss">$types: text #f00, photo #c69, video #c0ffee, link #bada55;
+
+@each $type in $types {
+     .post-type-#{nth($type, 1)} .post-icon{
+        background: nth($type, 2);
+    }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.post-type-text .post-icon {
+  background: #f00;
+}
+
+.post-type-photo .post-icon {
+  background: #c69;
+}
+
+.post-type-video .post-icon {
+  background: #c0ffee;
+}
+
+.post-type-link .post-icon {
+  background: #bada55;
+}</code></pre>
+						</div>
+						<ul class="bottom-links">
 					</section>
 
 					<section>
@@ -538,6 +614,7 @@ $blue: #00f;
 
 					<section>
 						<h2>@for loops</h2>
+						<hr>
 						<p>For loop using <code>through</code></p>
 						<hr>
 							<div class="left">
@@ -576,41 +653,10 @@ $blue: #00f;
 							<li><a href="http://12devs.co.uk/articles/handy-advanced-sass/">Handy Advanced Sass</a></li>
 						</ul>
 					</section>
+
 					<section>
 						<h2>@for loops</h2>
 						<p>For loop using <code>to</code></p>
-						<hr>
-							<div class="left">
-							<h2 class="syntax-label">.scss</h2>
-							<pre>
-							<code class="scss">$columns: 4;
-
-@for $i from 1 to $columns {
-  .cols-#{$i} {
-    width: ((100 / $columns) * $i) * 1%;
-  }
-}</code></pre>
-						</div>
-
-						<div class="right">
-						<h2 class="syntax-label">.css output</h2>
-						<pre>
-							<code class="css">.cols-1 {
-  width: 25%;
-}
-
-.cols-2 {
-  width: 50%;
-}
-
-.cols-3 {
-  width: 75%;
-}</code></pre>
-						</div>
-					</section>
-
-					<section>
-						<h2>@if statements</h2>
 						<hr>
 					</section>
 
@@ -623,8 +669,14 @@ $blue: #00f;
 				<!-- Sass Math -->
 				<section>
 					<section>
-						<h1>Lets do Some Math</h1>
+						<h1>Lets do Some Math & Play with Colors</h1>
 						<hr>
+						<ul>
+							<li>Supported Operators</li>
+							<li>Sin & Cos</li>
+							<li>Color Functions</li>
+							<li>Mix > Lighten/Darken</li>
+						</ul>
 					</section>
 
 					<section>
@@ -633,13 +685,21 @@ $blue: #00f;
 					</section>
 
 					<section>
-						<h2>color functions</h2>
+						<h2>sin & cos</h2>
 						<hr>
 					</section>
 
 					<section>
-						<h2>sin & cos</h2>
+						<h2>color functions</h2>
 						<hr>
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">Sass Functions Docs</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Mix > Lighten or Darken</h2>
 					</section>
 				</section>
 
@@ -648,10 +708,136 @@ $blue: #00f;
 					<section>
 						<h1>Pulling it Together</h1>
 						<hr>
+						<ul>
+							<li>Mixins + @content</li>
+							<li>Mixins + Maps</li>
+							<li>A Sassy Shape Mixin</li>
+							<li>Using Sassy Shapes</li>
+							<li>Arglists</li>
+							<li>Theming with Maps</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Mixins and @content</h2>
+						<hr>
+						<p>Mixins can take a variety of args, including <code>@content</code> blocks.</p>
+						<div class="left">
+							<h2 class="syntax-label">.scss</h2>
+							<pre>
+							<code class="scss">//mixin
+@mixin smaller-than($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin larger-than($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+//usage
+.heading {
+  font-size: 2em;
+  @include smaller-than(300px) {
+    font-size: 1.5em;
+  }
+  @include larger-than(768px) {
+    font-size: 3em;
+  }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.heading {
+  font-size: 2em;
+}
+@media (max-width: 300px) {
+  .heading {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3em;
+  }
+}</code></pre>
+						</div>
+
+						<ul class="bottom-links">
+						<h2>More Resources:</h2>
+							<li><a href="http://jshak.es/media-queries-in-sass/">Media Queries in Sass</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Mixins and Maps</h2>
+						<hr>
+						<div class="left">
+							<h2 class="syntax-label">.scss</h2>
+							<pre>
+							<code class="scss">//our map of breakpoints from earlier
+$breakpoints: (
+  small: 767px,
+  medium: 992px,
+  large: 1200px
+);
+
+//mixin using map-get
+@mixin smaller-than($point-name) {
+
+  $width: map-get($breakpoints, $point-name);
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin larger-than($point-name) {
+
+  $width: map-get($breakpoints, $point-name);
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+//usage
+.heading {
+  font-size: 2em;
+  @include smaller-than(small) {
+    font-size: 1.5em;
+  }
+  @include larger-than(medium) {
+    font-size: 3em;
+  }
+}</code></pre>
+						</div>
+
+						<div class="right">
+						<h2 class="syntax-label">.css output</h2>
+						<pre>
+							<code class="css">.heading {
+  font-size: 2em;
+}
+@media (max-width: 300px) {
+  .heading {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3em;
+  }
+}</code></pre>
+						</div>
 					</section>
 
 					<section>
 						<h2>Sassy Shapes Mixin</h2>
+						<hr>
 						<p>Mixins can take values and run logic loops.</p>
 						<p data-height="450" data-theme-id="5255" data-slug-hash="BhCLi" data-default-tab="result" data-user="unax3" class='codepen'>See the Pen <a href='http://codepen.io/unax3/pen/BhCLi/'>Sassy Shape Machine Mixin</a> by Una Kravets (<a href='http://codepen.io/unax3'>@unax3</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 						<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
@@ -659,17 +845,14 @@ $blue: #00f;
 
 					<section>
 						<h2>Sassy Shapes Mixin</h2>
+						<hr>
 						<p>Putting it to use.</p>
 						<p data-height="450" data-theme-id="5255" data-slug-hash="ujLCs" data-default-tab="result" data-user="unax3" class='codepen'>See the Pen <a href='http://codepen.io/unax3/pen/ujLCs/'>Sassy CSS Puppy</a> by Una Kravets (<a href='http://codepen.io/unax3'>@unax3</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+						<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 					</section>
 
 					<section>
-						<h2>Mixins and @content</h2>
-					</section>
-
-					<section>
-						<h2> Mixins that Use loops</h2>
+						<h2>Arglists vs lists</h2>
 					</section>
 
 					<section>
@@ -679,31 +862,30 @@ $blue: #00f;
 							<li><a href="https://bugsnag.com/blog/sass-color-palettes">Using Maps in Color Pallets</a></li>
 						</ul>
 					</section>
-
-					<section>
-
-					</section>
-
-					<section>
-						<h2>Directory structure</h2>
-					</section>
-					<section>
-						<h2>Using JSON with Sass</h2>
-					</section>
-					<section>
-						<h2>A look behind Grids</h2>
-					</section>
 				</section>
 
 				<!-- Thinking Outside the Box -->
 				<section>
 					<section>
-						<h1>Thinking Outside the Box</h1>
+						<h2>Thinking Outside the Box</h2>
+						<hr>
+						<ul>
+							<li>Ana Tudor does Geometric Sass</li>
+						<li>JSON in Sass</li>
+						<li>Jackie Balzar Build an App in Sass</li>
+						</ul>
 						<p>Some crazy, awesome Examples</p>
 					</section>
 					<section>
 						<h1>Ana Tudor</h1>
 					</section>
+
+					<section>
+						<h2>Using JSON with Sass</h2>
+						http://css-tricks.com/making-sass-talk-to-javascript-with-json/
+						http://viget.com/extend/sharing-data-between-sass-and-javascript-with-json
+					</section>
+
 					<section>
 						<h1>Jackie Balzar</h1>
 					</section>

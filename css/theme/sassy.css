@@ -40,6 +40,13 @@ cite {
   font-family: monospace; }
 .reveal li {
   margin-left: 1em; }
+.reveal dl {
+  font-size: .6em;
+  line-height: 1.4; }
+  .reveal dl dt {
+    color: #c69; }
+  .reveal dl dd {
+    margin-bottom: 1em; }
 .reveal section img {
   box-shadow: none !important;
   /*overriding default*/
