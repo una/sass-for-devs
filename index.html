@@ -697,10 +697,9 @@ $colors: (
           </section>
 
           <section>
-            <h2>@for loops</h2>
+            <h2>@for loop</h2>
             <hr>
             <p>For loop using <code>through</code></p>
-            <hr>
               <div class="left">
               <h2 class="syntax-label">.scss</h2>
               <pre>
@@ -739,10 +738,9 @@ $colors: (
           </section>
 
           <section>
-            <h2>@for loops</h2>
+            <h2>@for loop</h2>
             <hr>
             <p>For loop using <code>to</code></p>
-            <hr>
               <div class="left">
               <h2 class="syntax-label">.scss</h2>
               <pre>
@@ -779,6 +777,9 @@ $colors: (
           <section>
             <h2>@while loop</h2>
             <hr>
+            <blockquote>The @while loop has absolutely no use case in a real Sass project, especially since there is no way to break a loop from the inside. Do not use it.
+            <footer><a href="http://sass-guidelin.es/#while">Hugo Giraudel</a></footer>
+            </blockquote>
             <ul class="bottom-links">
             <h2>More Resources:</h2>
               <li><a href="http://thesassway.com/intermediate/if-for-each-while">@if @for @each @while loops</a></li>
@@ -800,18 +801,52 @@ $colors: (
           </section>
 
           <section>
-            <h2>supported operators</h2>
+            <h2>Supported Operators</h2>
             <hr>
+            <div class="left">
+              <h2 class="syntax-label">Calculation</h2>
+              <br>
+              <ul>
+                <li class="fragment">+</li>
+                <li class="fragment">-</li>
+                <li class="fragment">*</li>
+                <li class="fragment">/</li>
+                <li class="fragment">%</li>
+              </ul>
+            </div>
+            <div class="right">
+              <h2 class="syntax-label">
+                Comparison
+              </h2>
+              <br>
+              <ul>
+                <li class="fragment">==</li>
+                <li class="fragment">!=</li>
+                <li class="fragment">></li>
+                <li class="fragment"><</li>
+              </ul>
+            </div>
           </section>
 
           <section>
-            <h2>Sass Math</h2>
+            <h2>Number Functions</h2>
             <hr>
+              <img src="img/func-numbers.png" alt="Number Functions">
           </section>
 
           <section>
-            <h2>color functions</h2>
+            <h2>Math with Color</h2>
             <hr>
+            <p>Input:</p>
+            <pre><code class="scss">p {
+  color: #010203 + #040506;
+}</code></pre>
+
+          <p> <code>01 + 04 = 05, 02 + 05 = 07, and 03 + 06 = 09</code></p>
+          <p>Computed Value:</p>
+          <pre><code class="scss">p {
+  color: #050709;
+}</code></pre>
             <ul class="bottom-links">
             <h2>More Resources:</h2>
               <li><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">Sass Functions Docs</a></li>
@@ -819,7 +854,32 @@ $colors: (
           </section>
 
           <section>
-            <h2>Mix > Lighten or Darken</h2>
+            <h2>Color Functions</h2>
+            <hr>
+            <div class="left">
+              <img src="img/func-rgb.png" alt="">
+            </div>
+            <div class="right">
+              <img src="img/func-opacity.png" alt="">
+            </div>
+            <div class="bottom">
+              <img src="img/func-color-other.png" alt="">
+            </div>
+          </section>
+
+          <section>
+            <h2>Note: Mix > Lighten or Darken</h2>
+            <hr>
+            <p data-height="466" data-theme-id="5255" data-slug-hash="hbqsB" data-default-tab="result" data-user="KatieK2" class='codepen'>See the Pen <a href='http://codepen.io/KatieK2/pen/hbqsB/'>Experiments with Sass Color Functions</a> by KatieK (<a href='http://codepen.io/KatieK2'>@KatieK2</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+            <ul class="bottom-links">
+            <h2>More Resources:</h2>
+              <li><a href="http://jackiebalzer.com/color">A Visual Guide to Sass & Compass Color Functions</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Note: Mix > Lighten or Darken</h2>
             <hr>
             <p data-height="468" data-theme-id="5255" data-slug-hash="tejhz" data-default-tab="result" data-user="KatieK2" class='codepen'>See the Pen <a href='http://codepen.io/KatieK2/pen/tejhz/'>Dadgumit, Blowouts</a> by KatieK (<a href='http://codepen.io/KatieK2'>@KatieK2</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
             <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
@@ -1288,10 +1348,9 @@ $breakpoints: (
             <hr>
             <ul>
               <li>Advanced Trigonometric Sass</li>
-            <li>JSON in Sass</li>
-            <li>Jackie Balzar Build an App in Sass</li>
+              <li>Jackie Balzar Built a Weather App in Sass</li>
+              <li>Other Cool Links</li>
             </ul>
-            <p>Some crazy, awesome Examples</p>
           </section>
 
           <section>
@@ -1309,7 +1368,7 @@ $breakpoints: (
           <section>
             <h2>Ana Tudor, FTW</h2>
             <hr>
-            <p data-height="443" data-theme-id="5255" data-slug-hash="dvxgc" data-default-tab="result" data-user="thebabydino" class='codepen'>See the Pen <a href='http://codepen.io/thebabydino/pen/dvxgc/'>Cube truncation sequence (pure CSS 3D animation)</a> by Ana Tudor (<a href='http://codepen.io/thebabydino'>@thebabydino</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <p data-height="540" data-theme-id="5255" data-slug-hash="dvxgc" data-default-tab="result" data-user="thebabydino" class='codepen'>See the Pen <a href='http://codepen.io/thebabydino/pen/dvxgc/'>Cube truncation sequence (pure CSS 3D animation)</a> by Ana Tudor (<a href='http://codepen.io/thebabydino'>@thebabydino</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
             <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             <ul class="bottom-links">
             <h2>More Resources:</h2>
@@ -1318,21 +1377,20 @@ $breakpoints: (
           </section>
 
           <section>
-            <h2>Using JSON with Sass</h2>
+            <h2>Jackie Balzer</h2>
             <hr>
-            <ul class="bottom-links">
-            <h2>More Resources:</h2>
-              <li><a href="http://css-tricks.com/making-sass-talk-to-javascript-with-json/">CSS Tricks: Javascript with JSON</a></li>
-              <li><a href="http://viget.com/extend/sharing-data-between-sass-and-javascript-with-json">Sharing Data Between Sass & JS with JSON</a></li>
-            </ul>
+            <iframe src="//player.vimeo.com/video/86306814?color=ff006a" style="margin:0 auto; display:block;" width="900" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </section>
 
-
-          </section>
-
-          <section>
-            <h2>Jackie Balzar</h2>
-            <hr>
-          </section>
+        <section>
+          <h2>Sass + JSON</h2>
+            <li><a href="http://css-tricks.com/making-sass-talk-to-javascript-with-json/">CSS Tricks: Sass w/Javascript with JSON</a></li>
+            <li><a href="http://hugogiraudel.com/2014/01/20/json-in-sass/">SassyJson Library</a></li>
+            <li><a href="http://viget.com/extend/sharing-data-between-sass-and-javascript-with-json">Sharing Data Between Sass & JS with JSON</a></li>
+          <h2>Algorithms & Math</h2>
+            <li><a href="https://github.com/HugoGiraudel/SassyMatrix">Sassy Matrix</a></li>
+            <li><a href="https://github.com/HugoGiraudel/SassySort">Sassy Sort</a></li>
+          </ul>
         </section>
 
         <section>
