@@ -517,12 +517,12 @@ h2 {
           </section>
 
           <section>
-            <div class="left">
+            <div class="left fragment">
               <h2 class="syntax-label">.kitten</h2>
               <br>
               <img src="img/cat.jpg" height="493" width="360" alt="">
             </div>
-            <div class="right">
+            <div class="right fragment">
             <h2 class="syntax-label">.kitten-with-hat</h2>
             <br>
               <img src="img/cat-with-hat.jpg" height="493" width="360" alt="">
@@ -674,20 +674,12 @@ $blue: #00f;
           <section>
             <h2>Lists</h2>
             <hr>
-              <pre><code class="scss">$social-icons: twitter, facebook, instagram, dribbble;</code></pre>
-              <h2 class="syntax-label">List Functions</h2><br>
-              <dl>
-                <div class="left">
-                <dt>length($list):</dt> <dd> returns the length of a $list (if not a list, returns 1).
-                <dt>nth($list, $index):</dt> <dd> returns the value at $index position in $list (throw an error if index out of list range).
-                <dt>index($list, $value):</dt> <dd> returns the first index of the searched for $value in $list (false if not found).
-                <dt>append($list, $value[, $separator]):</dt> <dd> appends $value to the end of $list using $separator as a separator (using the current one if not specified).
-                </div>
-                <div class="right">
-                <dt>join($list-1, $list-2[, $separator]):</dt> <dd> appends $list-2 to $list-1 using $separator as a separator (using the one from the first list if not specified).
-                <dt>zip(*$lists):</dt> <dd> combines several list into a comma-separated list where the nth value is a space-separated lists of all source lists nth values. In case source lists are not all the same length, the result list will be the length of the shortest one.
-                </div>
-              </dl>
+            <h2 class="syntax-label">Basic List</h2>
+              <pre>
+              <code class="scss">$social-icons: twitter, facebook, instagram, dribbble;</code></pre>
+              <h2 class="syntax-label">Space-seperated Values</h2>
+              <pre>
+              <code class="scss">$types: text #f00, photo #c69, video #c0ffee, link #bada55;</code></pre>
             <ul class="bottom-links">
             <h2>More Resources:</h2>
               <li><a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/">Understanding Sass Lists</a></li>
@@ -731,6 +723,12 @@ $blue: #00f;
 }</code></pre>
             </div>
             <ul class="bottom-links">
+          </section>
+
+          <section>
+          <h2>List Functions</h2>
+          <hr>
+            <img src="img/func-lists.png" alt="">
           </section>
 
           <section>
@@ -1360,6 +1358,12 @@ end</code></pre>
             </ul>
           </section>
 
+          <section class="center abs-center">
+          <h2>SassDoc</h2>
+          <hr>
+            <img src="img/sassdoc.png">
+          </section>
+
           <section>
             <h2>Theming using Maps</h2>
             <hr>
@@ -1431,111 +1435,6 @@ end</code></pre>
     80: #601146,
     90: #3a0b2e,
     100: #040102
-  ),
-  'red': (
-    core: #e71d32,
-    10: #ffd2dd,
-    20: #ffa5b4,
-    30: #ff7d87,
-    40: #ff5050,
-    50: #e71d32,
-    60: #ad1625,
-    70: #8c101c,
-    80: #6e0a1e,
-    90: #4c0a17,
-    100: #040001
-  ),
-  'orange': (
-    core: #ff7832,
-    10: #ffd4a0,
-    20: #ffa573,
-    30: #ff7832,
-    40: #ff5003,
-    50: #d74108,
-    60: #a53725,
-    70: #872a0f,
-    80: #6d120f,
-    90: #43100b,
-    100: #030100
-  ),
-  'yellow': (
-    core: #fdd600,
-    10: #fde876,
-    20: #fdd600,
-    30: #efc100,
-    40: #be9b00,
-    50: #8c7300,
-    60: #735f00,
-    70: #574a00,
-    80: #3c3200,
-    90: #281e00,
-    100: #020100
-  ),
-  'gray': (
-     core: #777677,
-     10: #e0e0e0,
-     20: #c7c7c7,
-     30: #aeaeae,
-     40: #959595,
-     50: #777677,
-     60: #5a5a5a,
-     70: #464646,
-     80: #323232,
-     90: #121212,
-    100: #000
-  ),
-  'cool-gray': (
-     core: #6d7777,
-     10: #dfe9e9,
-     20: #c8d2d2,
-     30: #aeb8b8,
-     40: #959f9f,
-     50: #6d7777,
-     60: #586262,
-     70: #3c4646,
-     80: #323c3c,
-     90: #0d1111,
-    100: #000203
-  ),
-  'warm-gray': (
-     core: #7d7373,
-     10: #e9e0e0,
-     20: #d0c7c7,
-     30: #b8aeae,
-     40: #9e9494,
-     50: #7d7373,
-     60: #645a5a,
-     70: #504646,
-     80: #3c3232,
-     90: #1a1314,
-    100: #030000
-  ),
-  'neutral-white': (
-    core: #fdfdfd,
-    10: #fdfdfd,
-    20: #f9f9f9,
-    30: #f4f4f4,
-    40: #ececec
-  ),
-  'cool-white': (
-    core: #fbfcfc,
-    10: #fbfcfc,
-    20: #f9f9fb,
-    30: #f0f2f4,
-    40: #ecf2f2
-  ),
-  'warm-white': (
-    core: #fdfbfb,
-    10: #fdfbfb,
-    20: #fdfbfb,
-    30: #f7f5f5,
-    40: #f2eeee
-  ),
-  'black': (
-    core: #000
-  ),
-  'white': (
-    core: #fff
   )
 );</code></pre>
             </div>
@@ -1653,6 +1552,9 @@ end</code></pre>
           <h2>Algorithms & Math</h2>
             <li><a href="https://github.com/HugoGiraudel/SassyMatrix">Sassy Matrix</a></li>
             <li><a href="https://github.com/HugoGiraudel/SassySort">Sassy Sort</a></li>
+          <h2>Grid Systems</h2>
+            <li><a href="https://github.com/at-import/Singularity">Singularity</a></li>
+            <li><a href="http://susy.oddbird.net/">Susy</a></li>
           </ul>
         </section>
 
