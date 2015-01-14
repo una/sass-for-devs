@@ -34,6 +34,12 @@ cite {
     font-size: .8em;
     margin: 1em 0 -.5em 0;
     line-height: 0; }
+.reveal blockquote {
+  box-shadow: none;
+  width: 80%; }
+  .reveal blockquote footer {
+    text-align: right;
+    font-size: 80%; }
 .reveal p code {
   color: #c69;
   font-size: 90%;
